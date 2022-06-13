@@ -17,41 +17,7 @@ namespace MyAndroidBankController
         private static readonly string dbFolder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
         private static readonly string fileName = "Cats.db";
         private static readonly string dbFullPath = Path.Combine(dbFolder, fileName);
-        //public static async Task AddDatasFromDB(List<DataItem> dataItems)
-        //{
-        //    var newDataItems = new List<DataItem>();
-        //    try
-        //    {
-        //        using (var db = new DataItemContext(dbFullPath))
-        //        {
-        //            await db.Database.MigrateAsync(); //We need to ensure the latest Migration was added. This is different than EnsureDatabaseCreated.
-        //            DataItems = await db.Cats.ToListAsync();
-
-        //            if (DataItems.Count > 0)
-        //            {
-        //                foreach (var item in dataItems)
-        //                {
-        //                    if (!DataItems.Any(x => x.HashId == item.HashId))
-        //                        newDataItems.Add(item);
-        //                }
-        //            }
-        //            else
-        //                newDataItems = dataItems;
-        //            if (newDataItems.Count > 0)
-        //            {
-        //                NewDataItemsCount = newDataItems.Count;
-        //                DataItems.AddRange(newDataItems);
-        //                // await db.Cats.AddRangeAsync(newDataItems);
-        //                // await db.SaveChangesAsync();
-
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        System.Diagnostics.Debug.WriteLine(ex.ToString());
-        //    }
-        //}
+       
         public static async Task SetDatasFromDB()
         {
             try
@@ -66,23 +32,6 @@ namespace MyAndroidBankController
             {
                 System.Diagnostics.Debug.WriteLine(ex.ToString());
             }
-        }
-        private static List<DataItem> GetNewDatas(List<DataItem> dataItems)
-        {
-            var newDataItems = new List<DataItem>();
-
-                if (DataItems.Count > 0)
-                {
-                    foreach (var item in dataItems)
-                    {
-                        if (!DataItems.Any(x => x.HashId == item.HashId))
-                            newDataItems.Add(item);
-                    }
-                }
-                else
-                    newDataItems = dataItems;
-                return newDataItems;
-              
         }
         public static async Task AddDatas(List<DataItem> dataItems)
         {
@@ -107,6 +56,23 @@ namespace MyAndroidBankController
             {
                 System.Diagnostics.Debug.WriteLine(ex.ToString());
             }
+        }
+        private static List<DataItem> GetNewDatas(List<DataItem> dataItems)
+        {
+            var newDataItems = new List<DataItem>();
+
+            if (DataItems.Count > 0)
+            {
+                foreach (var item in dataItems)
+                {
+                    if (!DataItems.Any(x => x.HashId == item.HashId))
+                        newDataItems.Add(item);
+                }
+            }
+            else
+                newDataItems = dataItems;
+            return newDataItems;
+
         }
 
         public static List<DataItem> GetPayments(List<DataItem> dataItems)

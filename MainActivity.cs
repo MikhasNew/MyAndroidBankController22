@@ -25,9 +25,7 @@ namespace MyAndroidBankController
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
     public partial class MainActivity : AppCompatActivity
     {
-        Stopwatch timer = new Stopwatch();
-
-
+      
         // private static List<string> fragmentTitles;
         private static int[] tabIcons;
         // private static List<DataAdapter> dataAdapters;
@@ -75,7 +73,6 @@ namespace MyAndroidBankController
 
             pager = FindViewById<ViewPager2>(Resource.Id.pager);
 
-
             tabLayout.TabSelected += (object sender, TabLayout.TabSelectedEventArgs e) =>
             {
                 var tab = e.Tab;
@@ -100,9 +97,9 @@ namespace MyAndroidBankController
 
             adapter = new CustomViewPager2Adapter(this.SupportFragmentManager, this.Lifecycle);
             tabIcons = new int[]{
-            Resource.Drawable.abc_ic_clear_material,
-            Resource.Drawable.abc_ic_clear_material,
-            Resource.Drawable.abc_ic_clear_material
+            Resource.Mipmap.ic_cash50,
+            Resource.Mipmap.ic_in_deposit50,
+            Resource.Mipmap.ic_cash_out
             };
             pager.Adapter = adapter;
 

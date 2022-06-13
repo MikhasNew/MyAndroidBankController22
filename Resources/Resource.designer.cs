@@ -10023,13 +10023,25 @@ namespace MyAndroidBankController
 		{
 			
 			// aapt resource value: 0x7F0D0000
-			public const int ic_launcher = 2131558400;
+			public const int ic_cash50 = 2131558400;
 			
 			// aapt resource value: 0x7F0D0001
-			public const int ic_launcher_foreground = 2131558401;
+			public const int ic_cash_out = 2131558401;
 			
 			// aapt resource value: 0x7F0D0002
-			public const int ic_launcher_round = 2131558402;
+			public const int ic_in_deposit50 = 2131558402;
+			
+			// aapt resource value: 0x7F0D0003
+			public const int ic_launcher = 2131558403;
+			
+			// aapt resource value: 0x7F0D0004
+			public const int ic_launcher_foreground = 2131558404;
+			
+			// aapt resource value: 0x7F0D0005
+			public const int ic_launcher_round = 2131558405;
+			
+			// aapt resource value: 0x7F0D0006
+			public const int ic_payments50 = 2131558406;
 			
 			static Mipmap()
 			{
